@@ -6,11 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <RadioGroup
+        android:id="@+id/radioGroup3"
+        android:layout_width="411dp"
+        android:layout_height="204dp"
+        android:layout_marginBottom="88dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="2dp">
+
+        <RadioButton
+            android:id="@+id/radioBtnSuma"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Suma" />
+
+        <RadioButton
+            android:id="@+id/radioBtnResta"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Resta" />
+
+        <RadioButton
+            android:id="@+id/radioBtnMult"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Multiplicación" />
+
+        <RadioButton
+            android:id="@+id/radioBtnDiv"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="División" />
+    </RadioGroup>
+
     <Button
         android:id="@+id/button2"
         android:layout_width="208dp"
         android:layout_height="43dp"
-        android:onClick="click"
+        android:onClick="operate"
         android:text="Operate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,10 +58,10 @@
 
     <EditText
         android:id="@+id/num1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="413dp"
+        android:layout_height="43dp"
         android:layout_marginTop="35dp"
-        android:layout_marginBottom="281dp"
+        android:layout_marginBottom="222dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="first value"
@@ -52,26 +89,15 @@
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="400dp"
-        android:layout_height="47dp"
+        android:layout_width="410dp"
+        android:layout_height="51dp"
         android:text="Result:"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.058" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="195dp"
-        android:layout_marginBottom="367dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView1"
-        app:layout_constraintTop_toBottomOf="@+id/num1" >
-
-    </RadioGroup>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.785" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
