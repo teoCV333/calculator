@@ -12,7 +12,8 @@
         android:layout_height="204dp"
         android:layout_marginBottom="88dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="2dp">
+        tools:layout_editor_absoluteX="2dp"
+        tools:ignore="MissingConstraints">
 
         <RadioButton
             android:id="@+id/radioBtnSuma"

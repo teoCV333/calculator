@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText num1, num2;
     private TextView textView1;
 
-    int operation;
+    int operation = 0;
     private RadioButton radioBtnSuma, radioBtnResta, radioBtnMult, radioBtnDiv;
 
     @Override
@@ -58,9 +58,20 @@ public class MainActivity extends AppCompatActivity {
         String s2 = num2.getText().toString();
         int v1 = Integer.parseInt(s1);
         int v2 = Integer.parseInt(s2);
+
+        if(v1 == 0 || v2 == 0) {
+            textView1.setText("wrong values!!");
+            return;
+        }
+        if(v1 < v2) {
+            textView1.setText("imposible operation");
+            return;
+        }
         int result = v1 / v2;
         textView1.setText("Result: " + result);
+
     }
+
 
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
@@ -88,15 +99,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void operate(View v) {
-        switch (operation) {
-            case 1: suma();
-            break;
-            case 2: resta();
-            break;
-            case 3: mult();
-            break;
-            case 4: div();
-            break;
+        if(num1.getText().toString().length() == 0 || num2.getText().toString().length() == 0) {
+            textView1.setText("first you must insert a values");
+        } else {
+            if (operation != 0) {
+                switch (operation) {
+                    case 1:
+                        suma();
+                        break;
+                    case 2:
+                        resta();
+                        break;
+                    case 3:
+                        mult();
+                        break;
+                    case 4:
+                        div();
+                        break;
+                }
+            } else {
+                textView1.setText("first you must select an operation");
+            }
         }
     }
 }
